@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "jumpingstudio";
+  default: true;
+  prefersdark: true;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0 0);
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(92% 0 0);
+  --color-base-content: oklch(20% 0 0);
+  --color-primary: oklch(60% 0.118 184.704);
+  --color-primary-content: oklch(98% 0.014 180.72);
+  --color-secondary: oklch(64% 0.2 131.684);
+  --color-secondary-content: oklch(98% 0.031 120.757);
+  --color-accent: oklch(51% 0.262 276.966);
+  --color-accent-content: oklch(96% 0.018 272.314);
+  --color-neutral: oklch(37% 0 0);
+  --color-neutral-content: oklch(98% 0 0);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(84% 0.238 128.85);
+  --color-success-content: oklch(27% 0.072 132.109);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(27% 0.077 45.635);
+  --color-error: oklch(71% 0.202 349.761);
+  --color-error-content: oklch(28% 0.109 3.907);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, oklch(60% 0.118 184.704), oklch(51% 0.262 276.966));
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, oklch(60% 0.118 184.704 / 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, oklch(51% 0.262 276.966 / 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, oklch(64% 0.2 131.684 / 0.04) 0%, transparent 50%);
+}
+
+.glass {
+  background: oklch(98% 0 0 / 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid oklch(92% 0 0 / 0.9);
+}
+
+.glass-strong {
+  background: oklch(97% 0 0 / 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid oklch(92% 0 0);
+  box-shadow: 0 2px 20px oklch(20% 0 0 / 0.06);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px oklch(60% 0.118 184.704 / 0.2), 0 0 60px oklch(60% 0.118 184.704 / 0.08);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px oklch(60% 0.118 184.704 / 0.12), 0 0 30px oklch(60% 0.118 184.704 / 0.06);
+}
+
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 7rem 2rem;
+  }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  background: linear-gradient(90deg, oklch(60% 0.118 184.704), oklch(51% 0.262 276.966));
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bob {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(8px) translateX(-50%);
+  }
+}
+
+@keyframes pulse-ring {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.anim-fade-up {
+  animation: fade-up 0.6s ease both;
+}
+
+.anim-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.anim-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.anim-delay-3 {
+  animation-delay: 0.45s;
+}
+
+.anim-delay-4 {
+  animation-delay: 0.6s;
+}
+
+.anim-fade-in {
+  animation: fade-in 0.5s ease both;
+}
+
+.anim-bob {
+  animation: bob 2s ease-in-out infinite;
+}
+
+.anim-pulse-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(98% 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(88% 0 0);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(60% 0.118 184.704 / 0.5);
+}
