@@ -16,6 +16,15 @@ const projects = [
         tags: ["Vue JS"],
         demo: "https://floeapp.vercel.app/",
         github: "#",
+    },
+    {
+        emoji: "🛒",
+        title: "Mansara Books",
+        description:
+            "An initial prototype of an online shopping site",
+        tags: ["React Js"],
+        demo: "https://mansarastore.vercel.app/",
+        github: "#",
     }
 ];
 
